@@ -29,12 +29,12 @@ export const Input: React.FC<InputProps> = ({
           </span>
         )}
         <input
-          className={`w-full px-4 py-3 ${icon ? 'pl-10' : ''} border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00B4D8] focus:border-transparent outline-none transition-all duration-200 ${error ? 'border-red-500' : ''} ${className}`}
+          className={`w-full px-4 py-3 ${icon ? 'pl-11' : ''} bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all duration-200 ${error ? 'border-red-500 focus:ring-red-500' : ''} ${props.disabled ? 'bg-gray-50 text-gray-500 cursor-not-allowed' : ''} ${className}`}
           {...props}
         />
       </div>
       {error && (
-        <p className="mt-1 text-sm text-red-500">{error}</p>
+        <p className="mt-2 text-sm text-red-500">{error}</p>
       )}
     </div>
   );

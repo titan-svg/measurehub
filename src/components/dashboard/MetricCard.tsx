@@ -23,8 +23,8 @@ export const MetricCard: React.FC<MetricCardProps> = ({ metric }) => {
     <Card className="p-6" hover>
       <div className="flex items-start justify-between">
         <div>
-          <p className="text-sm text-gray-500 mb-1">{metric.title}</p>
-          <p className="text-3xl font-bold text-gray-900">{metric.value}</p>
+          <p className="text-sm text-muted-foreground mb-1 font-medium">{metric.title}</p>
+          <p className="text-3xl font-bold text-foreground">{metric.value}</p>
           {metric.change !== undefined && (
             <div className="flex items-center gap-1 mt-2">
               {metric.changeType === 'positive' && (
@@ -43,16 +43,16 @@ export const MetricCard: React.FC<MetricCardProps> = ({ metric }) => {
                     ? 'text-green-500'
                     : metric.changeType === 'negative'
                     ? 'text-red-500'
-                    : 'text-gray-500'
+                    : 'text-muted-foreground'
                 }`}
               >
                 {metric.change > 0 ? '+' : ''}{metric.change}%
               </span>
-              <span className="text-sm text-gray-400">vs mes anterior</span>
+              <span className="text-sm text-muted-foreground">vs mes anterior</span>
             </div>
           )}
         </div>
-        <div className="w-12 h-12 bg-gradient-to-br from-[#1E3A5F] to-[#00B4D8] rounded-lg flex items-center justify-center text-white">
+        <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center text-white shadow-md">
           <Icon name={iconName} />
         </div>
       </div>

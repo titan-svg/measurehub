@@ -20,16 +20,16 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick, user }) => {
           {onMenuClick && (
             <button
               onClick={onMenuClick}
-              className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+              className="lg:hidden p-2 hover:bg-muted rounded-lg transition-colors text-gray-600"
             >
               <Icon name="menu" />
             </button>
           )}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gradient-to-r from-[#1E3A5F] to-[#00B4D8] rounded-lg flex items-center justify-center">
+          <Link href="/" className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center shadow-md">
               <span className="text-white font-bold text-lg">M</span>
             </div>
-            <span className="hidden md:block text-xl font-bold bg-gradient-to-r from-[#1E3A5F] to-[#00B4D8] bg-clip-text text-transparent">
+            <span className="hidden md:block text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               MeasureHub
             </span>
           </Link>
@@ -39,9 +39,9 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick, user }) => {
           <div className="flex items-center gap-4">
             <div className="hidden md:block text-right">
               <p className="text-sm font-medium text-gray-900">{user.name}</p>
-              <p className="text-xs text-gray-500 capitalize">{user.role}</p>
+              <p className="text-xs text-muted-foreground capitalize">{user.role}</p>
             </div>
-            <div className="w-10 h-10 bg-gradient-to-r from-[#1E3A5F] to-[#00B4D8] rounded-full flex items-center justify-center">
+            <div className="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center shadow-md">
               <span className="text-white font-medium text-sm">
                 {user.name.split(' ').map(n => n[0]).join('')}
               </span>

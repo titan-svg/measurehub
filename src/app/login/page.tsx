@@ -18,7 +18,6 @@ export default function LoginPage() {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulate login - redirect based on email
     setTimeout(() => {
       if (email.includes('admin')) {
         router.push('/admin');
@@ -30,24 +29,24 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen flex bg-muted">
       {/* Left Panel - Form */}
       <div className="flex-1 flex items-center justify-center p-8">
         <div className="w-full max-w-md">
           <div className="text-center mb-8">
-            <Link href="/" className="inline-flex items-center gap-2 mb-8">
-              <div className="w-12 h-12 bg-gradient-to-r from-[#1E3A5F] to-[#00B4D8] rounded-lg flex items-center justify-center">
+            <Link href="/" className="inline-flex items-center gap-3 mb-8">
+              <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center shadow-lg">
                 <span className="text-white font-bold text-xl">M</span>
               </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-[#1E3A5F] to-[#00B4D8] bg-clip-text text-transparent">
+              <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 MeasureHub
               </span>
             </Link>
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Bienvenido</h1>
-            <p className="text-gray-600">Inicia sesión para acceder a tu cuenta</p>
+            <h1 className="text-3xl font-bold text-foreground mb-2">Bienvenido</h1>
+            <p className="text-muted-foreground">Inicia sesión para acceder a tu cuenta</p>
           </div>
 
-          <Card className="shadow-xl">
+          <Card className="shadow-xl border-0">
             <CardContent className="p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <Input
@@ -72,10 +71,10 @@ export default function LoginPage() {
 
                 <div className="flex items-center justify-between">
                   <label className="flex items-center gap-2 cursor-pointer">
-                    <input type="checkbox" className="w-4 h-4 rounded border-gray-300 text-[#00B4D8] focus:ring-[#00B4D8]" />
-                    <span className="text-sm text-gray-600">Recordarme</span>
+                    <input type="checkbox" className="w-4 h-4 rounded border-gray-300 text-secondary focus:ring-secondary" />
+                    <span className="text-sm text-muted-foreground">Recordarme</span>
                   </label>
-                  <Link href="#" className="text-sm text-[#00B4D8] hover:text-[#1E3A5F] transition-colors">
+                  <Link href="#" className="text-sm text-secondary hover:text-primary transition-colors font-medium">
                     ¿Olvidaste tu contraseña?
                   </Link>
                 </div>
@@ -85,8 +84,8 @@ export default function LoginPage() {
                 </Button>
               </form>
 
-              <div className="mt-6 pt-6 border-t border-gray-200">
-                <p className="text-center text-gray-600 text-sm mb-4">Demo Accesos Rápidos:</p>
+              <div className="mt-8 pt-6 border-t border-gray-200">
+                <p className="text-center text-muted-foreground text-sm mb-4">Demo - Accesos Rápidos:</p>
                 <div className="grid grid-cols-2 gap-3">
                   <Button
                     variant="outline"
@@ -113,9 +112,9 @@ export default function LoginPage() {
             </CardContent>
           </Card>
 
-          <p className="text-center mt-6 text-gray-600">
+          <p className="text-center mt-6 text-muted-foreground">
             ¿No tienes cuenta?{' '}
-            <Link href="#" className="text-[#00B4D8] hover:text-[#1E3A5F] font-medium transition-colors">
+            <Link href="#" className="text-secondary hover:text-primary font-medium transition-colors">
               Solicita una demo
             </Link>
           </p>
@@ -123,10 +122,10 @@ export default function LoginPage() {
       </div>
 
       {/* Right Panel - Decorative */}
-      <div className="hidden lg:flex flex-1 bg-gradient-to-br from-[#1E3A5F] to-[#00B4D8] items-center justify-center p-12">
+      <div className="hidden lg:flex flex-1 bg-gradient-to-br from-primary via-primary-light to-secondary items-center justify-center p-12">
         <div className="max-w-lg text-white text-center">
           <div className="mb-8">
-            <div className="w-24 h-24 mx-auto bg-white/20 rounded-2xl flex items-center justify-center mb-6">
+            <div className="w-24 h-24 mx-auto bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 shadow-lg">
               <Icon name="analytics" />
             </div>
           </div>
@@ -138,15 +137,15 @@ export default function LoginPage() {
           </p>
 
           <div className="mt-12 grid grid-cols-3 gap-6">
-            <div className="bg-white/10 rounded-xl p-4">
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 shadow-lg">
               <p className="text-2xl font-bold">87%</p>
               <p className="text-sm text-white/70">Clima</p>
             </div>
-            <div className="bg-white/10 rounded-xl p-4">
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 shadow-lg">
               <p className="text-2xl font-bold">342</p>
               <p className="text-sm text-white/70">Respuestas</p>
             </div>
-            <div className="bg-white/10 rounded-xl p-4">
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 shadow-lg">
               <p className="text-2xl font-bold">+12%</p>
               <p className="text-sm text-white/70">Mejora</p>
             </div>

@@ -45,14 +45,14 @@ export const LineChart: React.FC<LineChartProps> = ({ data, height = 200 }) => {
         <path
           d={areaD}
           fill="url(#lineGradient)"
-          opacity="0.3"
+          opacity="0.2"
         />
 
         {/* Line */}
         <path
           d={pathD}
           fill="none"
-          stroke="#00B4D8"
+          stroke="var(--color-secondary)"
           strokeWidth="0.8"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -60,27 +60,29 @@ export const LineChart: React.FC<LineChartProps> = ({ data, height = 200 }) => {
 
         {/* Points */}
         {points.map((point, index) => (
-          <circle
-            key={index}
-            cx={point.x}
-            cy={point.y}
-            r="1.5"
-            fill="#00B4D8"
-            stroke="white"
-            strokeWidth="0.5"
-          />
+          <g key={index}>
+            <circle
+              cx={point.x}
+              cy={point.y}
+              r="2"
+              fill="var(--color-secondary)"
+              stroke="white"
+              strokeWidth="0.5"
+              className="transition-all duration-200 hover:r-3"
+            />
+          </g>
         ))}
 
         <defs>
           <linearGradient id="lineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#00B4D8" />
-            <stop offset="100%" stopColor="#00B4D8" stopOpacity="0" />
+            <stop offset="0%" stopColor="var(--color-secondary)" />
+            <stop offset="100%" stopColor="var(--color-secondary)" stopOpacity="0" />
           </linearGradient>
         </defs>
       </svg>
 
       {/* Labels */}
-      <div className="flex justify-between mt-2 text-xs text-gray-500">
+      <div className="flex justify-between mt-3 text-xs text-muted-foreground font-medium">
         {data.labels.map((label, index) => (
           <span key={index}>{label}</span>
         ))}
