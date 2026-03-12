@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Footer } from '@/components/layout/Footer';
 import { Icon } from '@/components/ui/Icons';
@@ -116,41 +117,21 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Hero Illustration */}
+            {/* Hero Image */}
             <div className="relative animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <div
-                className="rounded-2xl p-6 md:p-8 shadow-2xl"
-                style={{ background: 'linear-gradient(135deg, #1E3A5F 0%, #00B4D8 100%)' }}
-              >
-                <div className="bg-white rounded-xl p-5 md:p-6 shadow-inner">
-                  <div className="flex items-center gap-2 mb-4">
-                    <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                  </div>
-                  <div className="space-y-3 mb-6">
-                    <div
-                      className="h-4 rounded-full w-3/4"
-                      style={{ background: 'linear-gradient(90deg, #1E3A5F 0%, #00B4D8 100%)' }}
-                    ></div>
-                    <div className="h-4 bg-gray-200 rounded-full w-full"></div>
-                    <div className="h-4 bg-gray-200 rounded-full w-5/6"></div>
-                  </div>
-                  <div className="grid grid-cols-3 gap-3">
-                    <div
-                      className="h-24 rounded-lg"
-                      style={{ background: 'linear-gradient(180deg, #00B4D8 0%, rgba(0,180,216,0.5) 100%)' }}
-                    ></div>
-                    <div
-                      className="h-32 rounded-lg"
-                      style={{ background: 'linear-gradient(180deg, #1E3A5F 0%, rgba(30,58,95,0.5) 100%)' }}
-                    ></div>
-                    <div
-                      className="h-20 rounded-lg"
-                      style={{ background: 'linear-gradient(180deg, #FF6B35 0%, rgba(255,107,53,0.5) 100%)' }}
-                    ></div>
-                  </div>
-                </div>
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <Image
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1470&auto=format&fit=crop"
+                  alt="Business Analytics Dashboard"
+                  width={700}
+                  height={500}
+                  className="w-full h-auto object-cover"
+                  priority
+                />
+                <div
+                  className="absolute inset-0 opacity-20"
+                  style={{ background: 'linear-gradient(135deg, #1E3A5F 0%, #00B4D8 100%)' }}
+                ></div>
               </div>
               {/* Floating elements */}
               <div
@@ -219,19 +200,72 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Showcase Section */}
       <section className="py-20 md:py-28 px-4 md:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1470&auto=format&fit=crop"
+                alt="Team collaboration"
+                width={700}
+                height={500}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Impulsa el <span className="text-gradient">engagement</span> de tu equipo
+              </h2>
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                Nuestras herramientas de medición te permiten identificar áreas de mejora, celebrar logros y crear un ambiente laboral excepcional.
+              </p>
+              <ul className="space-y-4">
+                <li className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #1E3A5F 0%, #00B4D8 100%)' }}>
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <span className="text-gray-700">Encuestas de clima personalizadas</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #1E3A5F 0%, #00B4D8 100%)' }}>
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <span className="text-gray-700">Reportes ejecutivos automáticos</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #1E3A5F 0%, #00B4D8 100%)' }}>
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <span className="text-gray-700">Seguimiento de planes de acción</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 md:py-28 px-4 md:px-6 lg:px-8 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1497215842964-222b430dc094?q=80&w=1470&auto=format&fit=crop"
+            alt="Modern office"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(30,58,95,0.9) 0%, rgba(0,180,216,0.85) 100%)' }}></div>
+        </div>
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
             ¿Listo para transformar tu gestión organizacional?
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 mb-10">
+          <p className="text-lg md:text-xl text-white/90 mb-10">
             Únete a más de 500 empresas que ya confían en MeasureHub para sus mediciones.
           </p>
           <Link href="/login">
             <button
-              className="px-10 py-4 rounded-lg font-semibold text-white text-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5"
-              style={{ background: 'linear-gradient(135deg, #1E3A5F 0%, #00B4D8 100%)' }}
+              className="px-10 py-4 rounded-lg font-semibold text-[#1E3A5F] text-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5 bg-white hover:bg-gray-100"
             >
               Comenzar Ahora
             </button>

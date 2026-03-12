@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Input } from '@/components/ui/Input';
@@ -121,33 +122,43 @@ export default function LoginPage() {
         </div>
       </div>
 
-      {/* Right Panel - Decorative */}
-      <div className="hidden lg:flex flex-1 bg-gradient-to-br from-primary via-primary-light to-secondary items-center justify-center p-12">
-        <div className="max-w-lg text-white text-center">
-          <div className="mb-8">
-            <div className="w-24 h-24 mx-auto bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 shadow-lg">
-              <Icon name="analytics" />
+      {/* Right Panel - Image */}
+      <div className="hidden lg:flex flex-1 relative">
+        <Image
+          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1470&auto=format&fit=crop"
+          alt="Team working together"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(30,58,95,0.85) 0%, rgba(0,180,216,0.8) 100%)' }}></div>
+        <div className="relative z-10 flex items-center justify-center p-12 w-full">
+          <div className="max-w-lg text-white text-center">
+            <div className="mb-8">
+              <div className="w-24 h-24 mx-auto bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                <Icon name="analytics" />
+              </div>
             </div>
-          </div>
-          <h2 className="text-3xl font-bold mb-4">
-            Gestiona tus mediciones organizacionales
-          </h2>
-          <p className="text-white/80 text-lg leading-relaxed">
-            Accede a dashboards interactivos, gestiona accesos de clientes y centraliza toda la información de tus encuestas en un solo lugar.
-          </p>
+            <h2 className="text-3xl font-bold mb-4">
+              Gestiona tus mediciones organizacionales
+            </h2>
+            <p className="text-white/80 text-lg leading-relaxed">
+              Accede a dashboards interactivos, gestiona accesos de clientes y centraliza toda la información de tus encuestas en un solo lugar.
+            </p>
 
-          <div className="mt-12 grid grid-cols-3 gap-6">
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 shadow-lg">
-              <p className="text-2xl font-bold">87%</p>
-              <p className="text-sm text-white/70">Clima</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 shadow-lg">
-              <p className="text-2xl font-bold">342</p>
-              <p className="text-sm text-white/70">Respuestas</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 shadow-lg">
-              <p className="text-2xl font-bold">+12%</p>
-              <p className="text-sm text-white/70">Mejora</p>
+            <div className="mt-12 grid grid-cols-3 gap-6">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 shadow-lg">
+                <p className="text-2xl font-bold">87%</p>
+                <p className="text-sm text-white/70">Clima</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 shadow-lg">
+                <p className="text-2xl font-bold">342</p>
+                <p className="text-sm text-white/70">Respuestas</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 shadow-lg">
+                <p className="text-2xl font-bold">+12%</p>
+                <p className="text-sm text-white/70">Mejora</p>
+              </div>
             </div>
           </div>
         </div>
