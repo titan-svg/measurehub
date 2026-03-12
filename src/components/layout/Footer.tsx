@@ -5,13 +5,16 @@ import Link from 'next/link';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-primary text-white">
-      <div className="max-w-7xl mx-auto px-4 md:px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer style={{ background: '#1E3A5F' }} className="text-white">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-r from-secondary to-accent rounded-lg flex items-center justify-center shadow-md">
+              <div
+                className="w-10 h-10 rounded-lg flex items-center justify-center shadow-lg"
+                style={{ background: 'linear-gradient(135deg, #00B4D8 0%, #FF6B35 100%)' }}
+              >
                 <span className="text-white font-bold text-lg">M</span>
               </div>
               <span className="text-xl font-bold">MeasureHub</span>
